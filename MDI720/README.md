@@ -1,4 +1,4 @@
-#MDI720 Statistics
+# MDI720 Statistics
 
 In this cours, I mainly learned:
 
