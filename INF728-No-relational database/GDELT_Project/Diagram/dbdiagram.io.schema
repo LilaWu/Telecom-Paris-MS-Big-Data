@@ -1,0 +1,30 @@
+// Creating tables
+Table event as U {
+  GLOBALEVENTID int [pk, increment] // auto-increment
+  Date int
+  Actor1GEO string
+  NumMentions int
+}
+
+Table eventmentions  {
+  GLOBALEVENTID int [pk]
+  MentionIdentifier string
+  
+}
+
+Table gkg {
+  GKGRECORDID string [pk]
+  DATE int
+  DocumentIdentifier string
+  V2Themes string
+  V2Persons string
+  V2Locations string
+  V2Tone string
+ }
+
+// Creating references
+// You can also define relaionship separately
+// > many-to-one; < one-to-many; - one-to-one
+Ref: eventmentions.GLOBALEVENTID - event.GLOBALEVENTID
+Ref: eventmentions.MentionIdentifier - gkg.DocumentIdentifier
+
